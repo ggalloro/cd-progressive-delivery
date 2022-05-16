@@ -15,13 +15,13 @@
 apiVersion: deploy.cloud.google.com/v1beta1
 kind: DeliveryPipeline
 metadata:
-  name: cd-on-gcp-pipeline
-description: delivery pipeline for CD on GCP demo with Skaffold profiles
+  name: progressive-pipeline
+description: delivery pipeline fortesting manual progressive delivery
 serialPipeline:
  stages:
- - targetId: qa
+ - targetId: canary
    profiles:
-   - qa
+   - canary
  - targetId: prod
    profiles:
    - prod

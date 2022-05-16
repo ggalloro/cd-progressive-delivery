@@ -17,9 +17,10 @@ kind: Deployment
 metadata:
   name: leeroy-app
 spec:
-  replicas: 3
   template:
     spec:
+      labels:
+        version: prod      
       containers:
         - name: leeroy-app
           env:

@@ -23,11 +23,11 @@ deploy:
     paths:
       - leeroy-app/kubernetes/dev
 profiles:
-- name: qa
+- name: canary
   deploy:
     kustomize:
       paths:
-        - leeroy-app/kubernetes/qa
+        - leeroy-app/kubernetes/canary
 - name: prod
   deploy:
     kustomize:

@@ -12,16 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: deploy.cloud.google.com/v1beta1
+kind: Target
 metadata:
-  name: leeroy-web
-spec:
-  replicas: 2
-  template:
-    spec:
-      containers:
-        - name: leeroy-web
-          env:
-            - name: TARGET
-              value: qa
+  name: canary
+description: Canary Deployment Target (gke-cluster)
+gke:
+  cluster: projects/galloro-demos/locations/europe-west1-b/clusters/gke-cluster
+#executionConfigs:
+#- privatePool:
+#    workerPool: projects/galloro-demos/locations/europe-west1/workerPools/private-eu
+#  usages:
+#  - RENDER
+#  - DEPLOY
