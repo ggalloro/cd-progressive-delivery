@@ -19,9 +19,10 @@ metadata:
   namespace: progress
 spec:
   template:
-    spec:
+    metadata:
       labels:
-        version: prod      
+        version: prod    
+    spec: 
       containers:
         - name: leeroy-app
           env:
