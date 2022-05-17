@@ -5,21 +5,21 @@ metadata:
   namespace: progress
 spec:
   hosts:
-  - leeroy-app
+  - "*"
   gateways:
-  - leeroy-app-gateway
+  - gateways/leeroy-app-gateway
   http:
   - route:
     - destination:
         host: leeroy-app
         port:
-          number: 80
+          number: 8081
         subset: prod
       weight: 100
     - destination:
         host: leeroy-app
         port:
-          number: 80
+          number: 8081
         subset: canary 
       weight: 0 
 

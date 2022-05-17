@@ -2,11 +2,10 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: leeroy-app-gateway
-  namespace: progress
+  namespace: gateways
 spec:
   selector:
     istio: ingressgateway
-    namespace: gateways
   servers:
   - port:
       number: 80
